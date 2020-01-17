@@ -74,6 +74,20 @@ public class LinkedList {
 		
 		return list;
 	}
+	public static LinkedList removeend(LinkedList list) {
+		
+		Node current=list.head;
+		while(current.next.next != null)
+		{
+			current=current.next;
+		}
+		current.next=null;
+		
+		return list;
+	}
+	
+	
+	public static LinkedList removeStart(LinkedList list)
 	
 	
 	public static void printlist(LinkedList list)
@@ -82,7 +96,7 @@ public class LinkedList {
 		while(current != null)
 		{
 			System.out.println(current.data +" ");
-			current = current.next;
+			current = current.next;																									
 		}
 		
 	}
@@ -105,6 +119,7 @@ public class LinkedList {
         list = insertstart(list, 6); 
         list = insertstart(list, 7); 
         list = insertstart(list, 8); 
+        list = removeend(list);
         
         list =insertat(list,9,3);
         printlist(list); 
