@@ -41,15 +41,15 @@ public class LinkedList {
 		return list;
 	}
 	public static LinkedList insertstart(LinkedList list,int data) {
-		
+		// to insert at start 
 		Node startNode = new Node(data);
 		startNode.next=null;
 		if(list.head == null)
-		{
+		{// to check if list is empty
 			list.head=startNode;
 		}
 		else
-		{
+		{// to start 
 			startNode.next=list.head;
 			list.head=startNode;
 		}
@@ -57,7 +57,7 @@ public class LinkedList {
 		return list;
 	}
 	public static LinkedList insertat(LinkedList list, int data, int position)
-	{
+	{// to insert at given position
 		Node startNode = new Node(data);
 		startNode.next=null;
 		
@@ -86,8 +86,14 @@ public class LinkedList {
 		return list;
 	}
 	
-	
 	public static LinkedList removeStart(LinkedList list)
+	{
+		Node current=list.head;
+		list.head=current.next;
+		return list;
+	}
+	
+	
 	
 	
 	public static void printlist(LinkedList list)
@@ -111,6 +117,7 @@ public class LinkedList {
         
   
         // Insert the values 
+	
         list = insertstart(list, 1); 
         list = insertstart(list, 2); 
         list = insertstart(list, 3); 
@@ -120,7 +127,7 @@ public class LinkedList {
         list = insertstart(list, 7); 
         list = insertstart(list, 8); 
         list = removeend(list);
-        
+        list = removeStart(list);
         list =insertat(list,9,3);
         printlist(list); 
 
