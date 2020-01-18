@@ -93,6 +93,22 @@ public class LinkedList {
 		return list;
 	}
 	
+	public static LinkedList removeAt(LinkedList list, int position)
+	{
+		
+		
+		Node check=list.head;
+		for(int i=0;i<position-1;i++)
+		{
+			
+			check = check.next;
+		}
+		check=check.next.next.next;
+		check.next.next=null;
+		
+		return list;
+	}
+	
 	
 	
 	
@@ -129,6 +145,7 @@ public class LinkedList {
         list = removeend(list);
         list = removeStart(list);
         list =insertat(list,9,3);
+        list = removeAt(list,3);
         printlist(list); 
 
 	}
