@@ -109,8 +109,43 @@ public class LinkedList {
 		return list;
 	}
 	
-	// just to check git commits
+	// Incomplete
 	
+	public static LinkedList BubbleSort(LinkedList list)
+	{
+		Node current=list.head;
+		Node toGo=list.head;
+		Node prev=list.head;
+		while(toGo.next.next!=null) 
+		{
+			while(current.next !=null)
+			{
+				if(current.data>current.next.data)
+				{
+					
+					// temp node to store;
+					Node temp=current.next;
+					current.next=temp.next;
+					temp.next=current;
+					list.head=temp;
+					
+					
+				}
+				else if(current!=list.head && current.data>current.next.data)
+				{
+					Node tmp=current.next;
+					current.next=tmp.next;
+					tmp.next=current;
+					prev.next=tmp;
+					prev=prev.next;
+				}
+			}
+			toGo=toGo.next;
+		}
+		
+		
+		return list;
+	}
 	
 	public static void printlist(LinkedList list)
 	{
@@ -146,6 +181,7 @@ public class LinkedList {
         list = removeStart(list);
         list =insertat(list,9,3);
         list = removeAt(list,3);
+        list = BubbleSort(list);
         printlist(list); 
 
 	}
