@@ -69,7 +69,7 @@ public class dualLinkedList {
 		Node current=list.head;
 		Node newnode=new Node(data);
 		int i=1;
-		if(pos==0)
+		if(pos<=1)
 		{
 			insertStart(list,data);
 		}
